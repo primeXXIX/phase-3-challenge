@@ -24,3 +24,36 @@ request: GET /api/shout/friday
 response: FRIDAY!!!
 status: 200
 ```
+#### Route 2: POST /api/array/merge
+When given a request with a JSON body containing two arrays (at keys "a" and "b"), it will respond with JSON containing two arrays merged together at the key "result". By merging array "b" into array "a", the new array will have all the elements from each, but alternating between them. For example:
+
+```javascript
+merge([1,2,3], [10,11,12]) => [1,10,2,11,3,12]
+```
+
+Example requests:
+```
+request: POST /api/array/merge
+request body: {"a": ["one","two"],
+               "b": ["three","four"]}
+request content type: application/json
+response status code: 200
+response: {"result": ["one","three","two","four"]}
+response content type: application/json
+
+request: POST /api/array/merge
+request body: {"a": [10,100],
+               "b": [50,500]}
+request content type: application/json
+response status code: 200
+response: {"result": [10,50,100,500]}
+response content type: application/json
+
+request: POST /api/array/merge
+request body: {"a": "abcd",
+               "b": [5,6]}
+request content type: application/json
+response status code: 400
+response: {"error": "Both keys in request body must be of type Array."}
+response content type: application/json
+```
