@@ -19,7 +19,14 @@ app.get('/api/shout/:word', (req, res) => {
   res.send(req.params.word.toUpperCase() + '!!!')
 })
 
+// Merge Route
+app.post('/api/array/merge', (req, res) => {
+  let a = req.body['a']
+  let b = req.body['b']
 
+console.log(a);
+  // res.format({ 'application/json': () => { res.status(400).json({ "error": "input error" })}})
+})
 
 
 
