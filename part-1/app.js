@@ -14,25 +14,32 @@ app.get('/', (req, res) => {
 
 // Shout route
 app.get('/api/shout/:word', (req, res) => {
-  // let word = req.params.word
-  // res.send(word.toUpperCase() + '!!!')
+  // let result = req.params.word
+  // res.send(`${result}!!!`)
   res.send(req.params.word.toUpperCase() + '!!!')
 })
 
 // Merge Route
 app.post('/api/array/merge', (req, res) => {
-  let a = req.body['a']
-  let b = req.body['b']
 
-console.log(a);
-  // res.format({ 'application/json': () => { res.status(400).json({ "error": "input error" })}})
-})
+const { a, b } = req.body
 
+if (Array.isArray(a) && Array.isArray(b)) {
+  resultArr = []
 
+  const merge = a.map((v, i) => {
+    resultArr.push(a[i])
+    resultArr.push(b[i])
+    return resultArr
+  })
+} else {
+  res.format({ 'application/json': () => { res.status(400).json({ "error": "Input error"})}})
+}
 
-
-
+}
 // Set up port
 app.listen(3000, (req, res) => {
-  console.log('Port 3000 is listening...');
+  console.log('Port 3000 is listening...')
 })
+
+// const port = process.env.PORT || 3000
