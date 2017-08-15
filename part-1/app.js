@@ -1,6 +1,8 @@
 const express = require('express')
       app = express()
       bodyParser = require('body-parser')
+      mergeArray = require('./merge-array')
+
 
 
 app.use(bodyParser.json())
@@ -21,22 +23,22 @@ app.get('/api/shout/:word', (req, res) => {
 
 // Merge Route
 app.post('/api/array/merge', (req, res) => {
+  if (Array.isArray(req.body.a) && Array.isArray(req.body.b)) {
+    console.log('true');
+    res.send("true")
+  } else {
+    console.log("not");
+    res.send("not")
+  }
 
-const { a, b } = req.body
+ })
 
-if (Array.isArray(a) && Array.isArray(b)) {
-  resultArr = []
 
-  const merge = a.map((v, i) => {
-    resultArr.push(a[i])
-    resultArr.push(b[i])
-    return resultArr
-  })
-} else {
-  res.format({ 'application/json': () => { res.status(400).json({ "error": "Input error"})}})
-}
 
-}
+
+
+
+
 // Set up port
 app.listen(3000, (req, res) => {
   console.log('Port 3000 is listening...')
