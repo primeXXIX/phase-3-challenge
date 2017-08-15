@@ -23,20 +23,23 @@ app.get('/api/shout/:word', (req, res) => {
 
 // Merge Route
 app.post('/api/array/merge', (req, res) => {
-  if (Array.isArray(req.body.a) && Array.isArray(req.body.b)) {
-    console.log('true');
-    res.send("true")
-  } else {
-    console.log("not");
-    res.send("not")
+  const { a, b } = req.body
+  console.log(typeof a);
+  console.log(typeof b);
+
+  if (!Array.isArray(a) || !Array.isArray(b)) {
+    res.status(400).send('Input data should be type of Array.')
   }
 
- })
+  const merge = a.reduce(function(arr, v, i) {
+    return arr.concat(v, b[i])
+  }, [])
 
-
-
-
-
+  res.send({
+    result: merge
+  })
+  console.log(merge);
+})
 
 
 // Set up port

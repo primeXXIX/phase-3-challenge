@@ -5,4 +5,5 @@ module.exports = function mergeArray(a, b) {
     result.push(b[i])
     return result
   })
+
 }
