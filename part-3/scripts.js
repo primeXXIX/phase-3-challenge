@@ -50,10 +50,13 @@
 function bookingModal( rate, room ) {
 
   const modal = document.getElementById( 'myModal' )
+  let numOfNights = modal.querySelector( 'num-of-nights' )
+
+  console.log(modal)
+
   let total = []
   let price = []
 
-  let numOfNights = document.querySelector( '<foo>' )
 
   modal.style.display = "block";
 
@@ -62,9 +65,33 @@ function bookingModal( rate, room ) {
 
 
   let totalCost = (numOfNights * rate)
-  let totalSpan = document.getElementById( 'total-of-nights' )
+      totalSpan = document.getElementById( 'total-of-nights' )
 
   totalSpan.innerHTML = totalCost
 
-  const exitModal = document.getElementsByClassName( 'exit' )
+  bookingInfo()
+
+  const exitModal = document.getElementById( 'close-modal' )[0]
+  exitModal = () => { modal.style.display = "none" }
+}
+
+function bookingInfo() {
+
+  document.getElementById( 'room-number' )[0].innerHTML = ''
+  document.getElementById( 'room-rate' )[0].innerHTML = ''
+
+  const roomNumberModal = document.getElementsById( 'room-number' )[0]
+        roomRateModal = document.getElementsById( 'room-rate' )[0]
+
+        total.map((i) => {
+          let myModal_th = document.createElement('th')
+          let myModal_price = document.createElement('th')
+
+          myModal.innerText = total.push[i]
+          myModal.innerText = price.push[i]
+
+          roomNumberModal.appendChild(myModal_th)
+          roomNumberModal.appendChild(myModal_price)
+        })
+
 }

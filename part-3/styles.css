@@ -59,3 +59,48 @@ body {
   overflow: auto;
   display: none;
 }
+
+#booking-modal {
+  background-color: grey;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid black;
+  width: 40%;
+}
+
+#close {
+  float: right;
+  font-weight: bold;
+}
+
+#room-rate {
+  list-style-type: none;
+  float: right;
+  margin: 0px;
+  padding: 5px;
+  text-align: right;
+}
+
+#checkin-date {
+  list-style-type: none;
+  float: right;
+  margin: 0px;
+  padding: 5px;
+  text-align: right;
+}
+
+#night-span {
+  list-style-type: none;
+  float: right;
+  margin: 0px;
+  padding: 5px;
+  text-align: right;
+}
+
+#total {
+  float: left;
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
