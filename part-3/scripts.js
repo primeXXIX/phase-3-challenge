@@ -53,5 +53,18 @@ function bookingModal( rate, room ) {
   let total = []
   let price = []
 
-  let noOfNights = document.querySelector( <> )
+  let numOfNights = document.querySelector( '<foo>' )
+
+  modal.style.display = "block";
+
+  total.push( room )
+  price.push( '$' + price + '/night' )
+
+
+  let totalCost = (numOfNights * rate)
+  let totalSpan = document.getElementById( 'total-of-nights' )
+
+  totalSpan.innerHTML = totalCost
+
+  const exitModal = document.getElementsByClassName( 'exit' )
 }
