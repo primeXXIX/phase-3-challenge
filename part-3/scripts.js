@@ -45,3 +45,13 @@
 //         modal.style.display = "none";
 //     }
 // }
+
+
+function bookingModal( rate, room ) {
+
+  const modal = document.getElementById( 'myModal' )
+  let total = []
+  let price = []
+
+  let noOfNights = document.querySelector( <> )
+}
