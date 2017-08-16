@@ -1,0 +1,3 @@
+NOTE: refactor code
+- use module exports
+- factor if statment

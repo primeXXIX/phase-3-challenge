@@ -42,8 +42,8 @@ response: {"result": ["one","three","two","four"]}
 response content type: application/json
 
 request: POST /api/array/merge
-request body: {"a": [10,100],
-               "b": [50,500]}
+request body: {: [50,"a": [10,100],
+               "b"500]}
 request content type: application/json
 response status code: 200
 response: {"result": [10,50,100,500]}
