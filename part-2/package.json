@@ -7,7 +7,12 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:drop": "dropdb hotel_db",
+    "db:create": "createdb hotel_db",
+    "db:schema": "psql hotel_db < db/schema.sql",
+    "db:seed": "psql hotel_db < db/load_data.sql ; psql hotel_db < db/guests.csv ; psql hotel_db < db/rooms.csv ; psql hotel_db < bookings.csv",
+    "db:build": "npm run dbdrop ; npm run db:create ; npm run db:schema ; npm run db:seed"
   },
   "keywords": [],
   "author": "",
