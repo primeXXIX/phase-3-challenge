@@ -99,7 +99,7 @@ function bookingInfo() {
         //   roomNumberModal.appendChild(myModal_hotelRoom)
         // })
 
-        for (var i = 0; i < hotelRate.length; i++) {
+        for (var i = 0; i < hotelRoom.length; i++) {
             let myModal_th = document.createElement('th')
             let myModal_hotelRoom = document.createElement('th')
 
