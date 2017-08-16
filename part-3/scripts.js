@@ -103,8 +103,8 @@ function bookingInfo() {
             let myModal_th = document.createElement('th')
             let myModal_hotelRoom = document.createElement('th')
 
-            myModal_th.innerText = hotelRoom.push[i]
-            myModal_Price.innerText = hotelRate.push[i]
+            myModal_th.innerText = hotelRoom[i]
+            myModal_Price.innerText = hotelRate[i]
 
             roomNumberModal.appendChild(myModal_th)
             roomRateModal.appendChild(myModal_hotelRoom)
