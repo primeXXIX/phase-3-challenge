@@ -71,27 +71,43 @@ function bookingModal( rate, room ) {
 
   bookingInfo()
 
-  const exitModal = document.getElementById( 'close-modal' )[0]
-  exitModal = () => { modal.style.display = "none" }
+  let exitModal = document.getElementById( 'close-modal' )
+  exitModal.onclick = () => { modal.style.display = "none" }
 }
 
 function bookingInfo() {
 
-  document.getElementById( 'room-number' )[0].innerHTML = ''
-  document.getElementById( 'room-rate' )[0].innerHTML = ''
+  // document.getElementById( 'room-number' )[0].innerHTML = ''
+  // document.getElementById( 'room-rate' )[0].innerHTML = ''
+  //
+  // const roomNumberModal = document.getElementById( 'room-number' )
+  //       roomRateModal = document.getElementById( 'room-rate' )
 
-  const roomNumberModal = document.getElementsById( 'room-number' )[0]
-        roomRateModal = document.getElementsById( 'room-rate' )[0]
+        document.getElementById( 'room-number' ).innerHTML = ''
+         document.getElementById( 'room-rate' ).innerHTML = ''
 
-        total.map((i) => {
-          let myModal_th = document.createElement('th')
-          let myModal_price = document.createElement('th')
+         const roomNumberModal = document.getElementById( 'room-number' )
+               roomRateModal = document.getElementById( 'room-rate' )
+        // total.map((i) => {
+        //   let myModal_th = document.createElement('th')
+        //   let myModal_price = document.createElement('th')
+        //
+        //   myModal.innerText = total.push[i]
+        //   myModal.innerText = price.push[i]
+        //
+        //   roomNumberModal.appendChild(myModal_th)
+        //   roomNumberModal.appendChild(myModal_price)
+        // })
 
-          myModal.innerText = total.push[i]
-          myModal.innerText = price.push[i]
+        for (var i = 0; i < total.length; i++) {
+            let myModal_th = document.createElement('th')
+            let myModal_price = document.createElement('th')
 
-          roomNumberModal.appendChild(myModal_th)
-          roomNumberModal.appendChild(myModal_price)
-        })
+            myModal_th.innerText = total.push[i]
+            myModal_Price.innerText = price.push[i]
+
+            roomNumberModal.appendChild(myModal_th)
+            roomRateModal.appendChild(myModal_price)
+        }
 
 }
